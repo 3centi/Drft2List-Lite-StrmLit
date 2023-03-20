@@ -12,7 +12,7 @@ def main():
     st.write(manual, unsafe_allow_html = True)
     pw = st.text_input('Enter password / パスワードを入力',type = 'password')
 
-    if hashlib.sha224(pw.encode()).hexdigest() == PW_HASH:
+    if hashlib.sha224(pw.encode()).hexdigest() == st.secrets["PW_HASH"]:
         uploaded_file = st.file_uploader('Upload the draft as csv file / CSVファイルをアップロード','csv')
     
         if uploaded_file is not None:
